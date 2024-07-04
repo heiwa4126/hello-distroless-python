@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/bin/env python3
 
 # Copyright 2017 Google Inc. All rights reserved.
 
@@ -16,6 +16,7 @@
 
 import argparse
 import os
+import sys
 
 parser = argparse.ArgumentParser()
 parser.add_argument("root", type=str, help="The root directory to walk.")
@@ -26,6 +27,11 @@ def main(args):
     for dirpath, _, files in os.walk(args.root):
         for f in files:
             print(os.path.join(dirpath, f))
+
+    print(sys.path)
+    print(sys.executable)
+    print(sys.version)
+    print(sys.argv)
 
 
 if __name__ == "__main__":
