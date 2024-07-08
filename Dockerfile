@@ -1,4 +1,4 @@
-FROM python:3.11-slim-bookworm AS build-env
+FROM python:3.12-slim-bookworm AS build-env
 # 下のdistrolessとバージョンをあわせる
 COPY . /app
 WORKDIR /app
