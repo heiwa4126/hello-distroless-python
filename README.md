@@ -8,17 +8,23 @@ Google の distroless でマルチステージビルドの練習。
 
 で、一番上のリンクから `Dockerfile` と `hello.py` をコピーしてきたもの。
 
+## ビルド
+
 ```sh
 docker build . -t hello-distroless
 docker run --rm hello-distroless
 ```
 
-で /etc の下のファイルが再帰的にリストされる。
+で /etc の下のファイルが再帰的にリスト表示される。
 
-`hello.py` は shebang が普通でないので、ローカルでは
+## メモ
+
+ローカルでは
 
 ```sh
 python3 hello.py .
+# または
+./hello.py .
 ```
 
 のように実行する。distroless の Docker 上では shebang は見てない。そもそも shell がない。なので書き換えてもいいかもね。
